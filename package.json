@@ -1,10 +1,11 @@
 {
-  "name": "ThisitaPortfolioPage",
-  "version": "0.0.2",
-  "description": "A portfolio web site for Ian Zachary Ledrick. Makes use of jQuery and Twitter Bootstrap.",
+  "name": "ThisitaNet"
+  "version": "2.1",
+  "description": "ThisitaNet Public Research Appilication. Serves public content for thisita.net.",
   "main": "app.js",
+  "private": true,
   "author": {
-    "name": "Ian Zachary Ledrick",
+    "name": "Ian Zachary Ledrick aka Thisita",
     "email": "thisita@outlook.com"
   },
   "dependencies": {
