@@ -1,0 +1,56 @@
+extends layout
+
+block content
+  .page-header
+    .jumbotron
+      .row
+        .col-md-5
+          img(src='/images/randomapp/icon.png', alt='...')
+        .col-md-7
+          h1= pageTitle
+          p.text-muted Generates random things for your random needs
+      .row
+        a.pull-right(href='http://www.windowsphone.com/s?appid=b54fcc2c-119c-4e00-b6ba-30eac8a0396d')
+          img(src='/images/wpsdownload.png', alt='Download from the Windows Phone Store')
+  .row.featurette
+    .col-md-5
+      img.featurette-image.img-responsive(src='/images/randomapp/screen1.png', alt='...')
+    .col-md-7
+      h2.featurette-heading Numbers
+      p.lead This customizable page can be configured to generate a variety of numbers and sets of numbers within ranges
+  
+  hr.featurette-divider
+  .row.featurette
+    .col-md-7
+      h2.featurette-heading Dice
+      p.lead This customizable page is designed for those needing dice rolls, such as for gaming. Customize it to have your favorite dice loaded.
+    .col-md-5
+      img.featurette-image.img-responsive(src='/images/randomapp/screen2.png', alt='...')
+  
+  hr.featurette-divider
+  .row.featurette
+    .col-md-5
+      img.featurette-image.img-responsive(src='/images/randomapp/screen3.png', alt='...')
+    .col-md-7
+      h2.featurette-heading Strings
+      p.lead This customizable page is for the creation of random strings within a Sigma set. Use it to assist password generation.
+  
+  //  Removed because it is completely unnecessary to show the about page
+  //hr.featurette-divider
+  //.row.featurette
+  //  .col-md-7
+  //    h2.featurette-heading Heading
+  //    p.lead This shit gonna blow you socks off yo
+  //  .col-md-5
+  //    img.featurette-image.img-responsive(src='/images/randomapp/screen4.png', alt='...')
+  //
+  
+  hr.featurette-divider
+  .row.featurette
+    .col-md-5
+      img.featurette-image.img-responsive(src='/images/randomapp/screen6.png', alt='...')
+    .col-md-7
+      h2.featurette-heading Settings
+      p.lead Customize all the pages to your hearts content!
+      p Customize the constraints such as maximum and minimum values for number generation, or strings lengths and characters to use in string generation.
+      p Customize the page layout using simple configuration strings.

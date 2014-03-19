@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  .page-header
+    .jumbotron
+      .row
+        .col-md-5
+          img(src='/images/minimalcounter/icon.png', alt='...')
+        .col-md-7
+          h1= pageTitle
+          p.text-muted Generic (or not so generic) counters. The choice is yours!
+      .row
+        a.pull-right(href='http://www.windowsphone.com/s?appid=4871fa48-ce63-411d-b1ab-c54fdd9e8ea7')
+          img(src='/images/wpsdownload.png', alt='Download from the Windows Phone Store')
+  .row.featurette
+    .col-md-5
+      img.featurette-image.img-responsive(src='/images/minimalcounter/screen1.png', alt='...')
+    .col-md-7
+      h2.featurette-heading Counters
+      p.lead Counters developed in the native style of Windows Phone
+      p No backgrounds that get in the way of reading your counters, and styles adapt to your settings. Minimal style so you can get down to knocking points off of your opponent.
+  
+  hr.featurette-divider
+  .row.featurette
+    .col-md-7
+      h2.featurette-heading Simple settings
+      p.lead Say goodbye to digging for simple layout changes
+      p Everything you need to count is right at your finger tips. Icons follow native patterns and not in the way following the system rules of design patterns.
+    .col-md-5
+      img.featurette-image.img-responsive(src='/images/minimalcounter/screen2.png', alt='...')
+  
+  hr.featurette-divider
+  .row.featurette
+    .col-md-5
+      img.featurette-image.img-responsive(src='/images/minimalcounter/screen3.png', alt='...')
+    .col-md-7
+      h2.featurette-heading Customizable defaults
+      p.lead Don't like my default? Fill in your own with the configuration items on the settings page!

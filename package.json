@@ -1,0 +1,15 @@
+{
+  "name": "ThisitaPortfolioPage",
+  "version": "0.0.2",
+  "description": "A portfolio web site for Ian Zachary Ledrick. Makes use of jQuery and Twitter Bootstrap.",
+  "main": "app.js",
+  "author": {
+    "name": "Ian Zachary Ledrick",
+    "email": "thisita@outlook.com"
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "jade": "*",
+    "stylus": "*"
+  }
+}

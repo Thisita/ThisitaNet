@@ -1,0 +1,39 @@
+﻿doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='Portfolio website for Ian Zachary Ledrick')
+    meta(name='author', content='Ian Zachary Ledrick')
+    link(rel='shortcut icon', href='/favicon.png')
+    title= pageTitle
+    link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+    link(href='/stylesheets/default.css', rel='stylesheet')
+  body
+    #wrap
+      .navbar.navbar-default
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-responsive-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/projects/android/index.html') Android Phone Apps
+        .navbar-collapse.collapse.navbar-responsive-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='/projects/android/arrowfood.html') Arrow Food App
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href='/index.html') ThisitaNet Home
+      .container
+        block content
+    #footer
+      .container
+        p.text-muted
+          | &copy 2014 All Rights Reserved Ian Zachary Ledrick
+          span.pull-right
+            | Site version
+            = ' ' + siteVersion
+    script(src='/javascripts/jquery-2.0.3.min.js')
+    script(src='/javascripts/bootstrap.min.js')

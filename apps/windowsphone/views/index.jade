@@ -1,0 +1,64 @@
+﻿doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='Portfolio website for Ian Zachary Ledrick')
+    meta(name='author', content='Ian Zachary Ledrick')
+    link(rel='shortcut icon', href='/favicon.png')
+    title= pageTitle
+    link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+    link(href='/stylesheets/default.css', rel='stylesheet')
+  body
+    #wrap
+      .navbar.navbar-default
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-responsive-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/') Windows Phone Apps
+        .navbar-collapse.collapse.navbar-responsive-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='/randomapp.html') Random App
+            li
+              a(href='/minimalcounter.html') Minimal Counter
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href='http://thisita.net/') ThisitaNet Home
+      #appscarousel.carousel.slide(data-ride='carousel')
+        ol.carousel-indicators
+          li.active(data-target='#appscarousel' data-slide-to='0')
+          li(data-target='#appscarousel' data-slide-to='1')
+        .carousel-inner
+          .item.active
+            img(src='/images/randomapp/icon.png', alt='...')
+            .container
+              .carousel-caption
+                h1 Random App
+                p Generate random things for your random needs
+                p
+                  a.btn.btn-lg.btn-primary(href='/randomapp.html', role='button') Learn more
+          .item
+            img(src='/images/minimalcounter/icon.png', alt='...')
+            .container
+              .carousel-caption
+                h1 Minimal Counter
+                p For all your counting needs
+                p
+                  a.btn.btn-lg.btn-primary(href='/minimalcounter.html', role='button') Learn more
+        a.left.carousel-control(href='#appscarousel', data-slide='prev')
+          span.glyphicon.glyphicon-chevron-left
+        a.right.carousel-control(href='#appscarousel', data-slide='next')
+          span.glyphicon.glyphicon-chevron-right
+    #footer
+      .container
+        p.text-muted
+          | &copy 2014 All Rights Reserved Ian Zachary Ledrick
+          span.pull-right
+            | Site version
+            = ' ' + siteVersion
+    script(src='/javascripts/jquery-2.0.3.min.js')
+    script(src='/javascripts/bootstrap.min.js')
