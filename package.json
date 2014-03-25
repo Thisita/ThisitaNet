@@ -1,6 +1,6 @@
 {
   "name": "ThisitaNet",
-  "version": "2.1",
+  "version": "2.1.0",
   "description": "ThisitaNet Public Research Appilication. Serves public content for thisita.net.",
   "main": "app.js",
   "private": true,
