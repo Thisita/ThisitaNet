@@ -22,3 +22,6 @@ app.use(express.vhost('thisita.asuscomm.com', express().get('*', function(req, r
 
 // Listen
 app.listen(process.env.PORT || 8080);
+
+// Notify
+console.log("ThisitaNet started on port " + (process.env.PORT || 8080));
