@@ -1,3 +1,4 @@
+// imports
 var express = require('express');
 var app = express();
 
@@ -15,7 +16,6 @@ app.use(express.vhost('blog.thisita.net', require('./apps/blog').app));
 app.use(express.vhost('windowsphone.thisita.net', require('./apps/windowsphone').app));
 
 // Fast redirect
-
 app.use(express.vhost('thisita.asuscomm.com', express().get('*', function(req, res) {
   res.redirect('http://thisita.net/');
 })));

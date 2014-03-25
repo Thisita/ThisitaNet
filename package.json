@@ -1,5 +1,5 @@
 {
-  "name": "ThisitaNet"
+  "name": "ThisitaNet",
   "version": "2.1",
   "description": "ThisitaNet Public Research Appilication. Serves public content for thisita.net.",
   "main": "app.js",
