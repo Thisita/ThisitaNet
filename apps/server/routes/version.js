@@ -1,2 +1,2 @@
 
-exports.string = "2.0";
+exports.string = "2.1";
