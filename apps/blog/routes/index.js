@@ -5,5 +5,5 @@ module.exports = function(app) {
   app.get('/', function(req,res) { res.redirect('/index.html'); });
   app.get('/index.html', routes.index);
   app.get('/posts', function(req,res) { res.redirect('/index.html'); });
-  app.get('/posts/:year/:month/:day/:id', routes.post);
+  app.get('/posts/:postId([0-9]{12}).html', routes.post);
 };

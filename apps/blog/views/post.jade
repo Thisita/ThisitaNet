@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  .page-header
+    h1
+      a(href="/posts/"+post.id+'.html')= post.title
+    h6!= "Created by " + post.author + " on " + post.created
+  #post!= post.body

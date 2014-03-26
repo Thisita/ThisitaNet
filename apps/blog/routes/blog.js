@@ -1,63 +1,49 @@
+
+// includes
 var version = require('./version').string;
 var fs = require('fs');
-/*
- * GET home page.
- */
+var path = require('path');
 
+var postsPath = './apps/blog/posts';
+
+// The index route handler
 exports.index = function(req, res){
-  res.render('index', {
-    pageTitle: 'ThisitaNet Blog',
-    siteVersion: version
-  });
-};
-
-exports.post = function(req, res){
-  getArticle(req.params.year,
-    req.params.month,
-    req.params.day,
-    req.params.id,
-    function(err,data) {
-      if(err) {
-        res.render('postnotfound', {
-          pageTitle: 'ThisitaNet Blog',
-          siteVersion: version
-        });
-      } else {
-        res.render('post', {
-          pageTitle: 'ThisitaNet Blog: ' + data.title,
-          siteVersion: version,
-          post: data
-        });
-      }
-    }
-  );
-  res.render('post', {
-    pageTitle: 'ThisitaNet Blog: ',
-    siteVersion: version
-  });
-};
-
-// helper functions
-
-function getArticle(y,m,d,i,cb) {
-  var year = parseInt(y),
-    month = parseInt(m),
-    day = parseInt(d),
-    id = parseInt(i);
-  if(isNaN(year) || isNaN(month) || isNaN(day) || isNaN(id)) {
-    // somebody is pulling our leg
-    cb(true, null);
+  // Look up the dir of posts
+  var posts = fs.readdirSync(postsPath);
+  posts.reverse();
+  
+  // Only parse the first 5
+  var n = 5;
+  if(posts.length < 5) {
+    n = posts.length;
   }
   
-  var file = _dirname + '/public/json/';
-  file += year + '/' + month + '/' + day + '/' + id + '.json';
+  var postsData = [];
+  // Load and parse the files
+  for(var i = 0; i < n; ++i) {
+    postsData.push(JSON.parse(fs.readFileSync(postsPath + '/' + posts[i], 'utf8')));
+  }
   
-  fs.readFile(file, 'utf8', function(err,data) {
-    if(err) {
-      cb(true, null);
-    }
-    
-    var json = JSON.parse(data);
-    cb(false, json);
+  // render
+  res.render('index', {
+    pageTitle: 'ThisitaNet Blog',
+    siteVersion: version,
+    posts: postsData
   });
-}
+};
+
+// The single post route handler
+exports.post = function(req, res){
+  var file = postsPath + '/' + req.params.postId + '.json';
+  console.log("File \"" + file + "\" requested");
+  if(fs.existsSync(file)) {
+    var post = JSON.parse(fs.readFileSync(file, 'utf8'));
+    res.render('post', {
+      pageTitle: 'ThisitaNet Blog: ' + post.title,
+      siteVersion: version,
+      post: post
+    });
+  } else {
+    res.send(404);
+  }
+};

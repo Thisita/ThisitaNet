@@ -2,5 +2,12 @@ extends layout
 
 block content
   .page-header
-    .jumbotron
-      h1 Coming soon!
+    h1 ThisitaNet Blog Posts
+  #posts
+    - each post in posts
+      .panel.panel-default
+        .panel-heading
+          h3.panel-title
+            a(href="/posts/"+post.id+'.html')= post.title
+          h6!= "Created by " + post.author + " on " + post.created
+        .panel-body!= post.body
